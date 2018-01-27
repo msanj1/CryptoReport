@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Crypto.Core.Entities;
 using Xamarin.Forms;
 
 namespace Crypto
 {
 	public partial class App : Application
 	{
-	    public static List<string> PhoneNumbers { get; set; }
+	    public static List<CallHistory> PhoneNumbers { get; set; }
 		public App ()
 		{
 			InitializeComponent();
-		    PhoneNumbers = new List<string>();
+		    PhoneNumbers = new List<CallHistory>();
             MainPage = new NavigationPage(new MainPage());
 		}
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Crypto.Core.Entities;
 using Crypto.Interfaces;
 using Xamarin.Forms;
 
@@ -41,7 +42,7 @@ namespace Crypto
 	            var dialer = DependencyService.Get<IDialer>();
 	            if (dialer != null)
 	            {
-	                App.PhoneNumbers.Add(translatedNumber);
+	                App.PhoneNumbers.Add(new CallHistory(){ PhoneNumber= translatedNumber });
 	                callHistoryButton.IsEnabled = true;
                     dialer.Dial(translatedNumber);
                 }

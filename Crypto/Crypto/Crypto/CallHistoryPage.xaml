@@ -11,7 +11,22 @@
     </ContentPage.Padding>
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{x:Static local:App.PhoneNumbers}"></ListView>
+            <ListView ItemsSource="{x:Static local:App.PhoneNumbers}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding ImageUri}" WidthRequest="40" HeightRequest="40"></Image>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding PhoneNumber}" FontAttributes="Bold"  HorizontalOptions="FillAndExpand"></Label>
+                                    <!--<Label Text="{Binding }" HorizontalOptions="FillAndExpand"></Label>-->
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
