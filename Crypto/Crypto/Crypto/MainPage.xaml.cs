@@ -21,32 +21,32 @@ namespace Crypto
 
 	    private void TranslateButton_OnClicked(object sender, EventArgs e)
 	    {
-	        translatedNumber = PhonewordTranslator.ToNumber(phoneNumberText.Text);
-	        if (!string.IsNullOrWhiteSpace(translatedNumber))
-	        {
-	            callButton.IsEnabled = true;
-	            callButton.Text = "Call " + translatedNumber;
-	        }
-	        else
-	        {
-	            callButton.IsEnabled = false;
-	            callButton.Text = "Call";
-	        }
+	        //translatedNumber = PhonewordTranslator.ToNumber(phoneNumberText.Text);
+	        //if (!string.IsNullOrWhiteSpace(translatedNumber))
+	        //{
+	        //    callButton.IsEnabled = true;
+	        //    callButton.Text = "Call " + translatedNumber;
+	        //}
+	        //else
+	        //{
+	        //    callButton.IsEnabled = false;
+	        //    callButton.Text = "Call";
+	        //}
         }
 
 	    private async void CallButton_OnClicked(object sender, EventArgs e)
 	    {
-	        if (await this.DisplayAlert(
-	            "Dial a Number","Would you like to call "+ translatedNumber + "?","Yes","No"))
-	        {
-	            var dialer = DependencyService.Get<IDialer>();
-	            if (dialer != null)
-	            {
-	                App.PhoneNumbers.Add(new CallHistory(){ PhoneNumber= translatedNumber });
-	                callHistoryButton.IsEnabled = true;
-                    dialer.Dial(translatedNumber);
-                }
-	        }
+	        //if (await this.DisplayAlert(
+	        //    "Dial a Number","Would you like to call "+ translatedNumber + "?","Yes","No"))
+	        //{
+	        //    var dialer = DependencyService.Get<IDialer>();
+	        //    if (dialer != null)
+	        //    {
+	        //        App.PhoneNumbers.Add(new CallHistory(){ PhoneNumber= translatedNumber });
+	        //        callHistoryButton.IsEnabled = true;
+         //           dialer.Dial(translatedNumber);
+         //       }
+	        //}
 	    }
 
 	    private async void CallHistoryButton_OnClicked(object sender, EventArgs e)
